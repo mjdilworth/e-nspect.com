@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+<TITLE>e-nspect2000 Architecture</TITLE>
+</HEAD>
+<BODY>
+<div id="nsbanner" class="nsbanner">
+<div id="bannerrow2" class="bannerrow2">
+<TABLE CLASS="buttonbartable" CELLSPACING=0>
+	<TR ID="hdr" NOWRAP>
+	<TD width=95 NOWRAP><a href="index.html" target="_top"><IMG style="WIDTH: 121px; HEIGHT: 46px" height=44 src="logo.jpg" width=156></a></TD>
+	<TD NOWRAP>&nbsp;&nbsp;<FONT color=white>2000</FONT></TD>
+	<TD align=middle>
+	<FONT color=white>an </FONT><b><span style="COLOR: #f0d260">e-nspect</span>
+						<span style="COLOR: #f0d260">Software&nbsp;</span></b><FONT color=white>design </FONT>
+						</TD>
+	</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="top">
+<H1 class="relnotes" valign="top">e-nspect2000 Architecture</H1>
+
+<DIV class="mytext">
+The following section details e-nspect2000's architecture and will aid in your understanding of installation and 
+configuration issues.
+
+
+</DIV></DIV>
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+<ul>
+<li>Exchange Server Components.
+	<ul>
+		<li>Microsoft Exchange Server Event Sinks.
+		<li>Windows Service.</li> 
+	</ul>
+<li>Database Services.
+	<ul>
+		<li>e-nspect Database.</li> 
+	</ul>
+<li>Client Tools.
+	<ul>
+		<li>e-nspect Event Sink Administration Module.
+		<li>e-nspect Report Viewer.</li>  
+	</ul></li>
+</ul> 
+
+</DIV>
+</DIV>
+<p>
+
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+<h5>Exchange Server Components</h5>
+<p>
+<b>Microsoft Exchange Server Event Sinks.</b>
+<p>
+e-nspect2000 uses the OnPostCategorize Transport Event notification to intercept messages.  Using this notification provides
+extra information pertaining to the categorization of the message.
+<p>
+The e-nspect2000 sink (class name "e_report.collect") is written in C++ using the ATL COM template with asynchronous file I/O operations 
+and is fully cacheable by the SMTP service (in actuality the IISAdmin service).  
+This results in the creation of a very small and lightweight component that has minimal impact on the processing capabilities 
+of the SMTP service.
+<p>
+The e-nspect2000 sink utilises a local file system directory to hold temporary information.  This information is subsequently
+processed by the e-nspect2k Agent, a Windows Service.
+<p>
+The e-nspect2000 event sink is managed and configurable using the e-nspect Event Sink Administration Module (described later).
+The sink, although cached, automatically detects any configuration changes and responds accordingly.
+<p>
+
+<b>Windows Service.</b>
+<p>
+The e-nspect2k Agent service is implemented as a Windows Service.  It is controlled by the Service Control Manager and is configured
+to automatically start at system startup.  Although, after the initial installation you will have to manually start the service,
+<p>
+This service is written in C++ using the ATL COM template to provide a small, lightweight component with minimum system dependencies. 
+The service is responsible for the processing of files contained within the temporary folders.  The end result of these processing
+operations is the insertion of data into the e-nspect database.
+<p>
+Similar to the event sink, the e-nspect2k Agent service will automatically reconfigure itself in accordance with changes made to 
+the event sink configuration.
+<p>
+Full Application event logging is implemented in the service.
+
+<p></p>
+</DIV>
+</DIV>
+
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+<h5>Database Services</h5>
+<p>
+e-nspect2000 stores collected data in a SQL database server.  Similarly, it is from this database server that reports are 
+generated.  The database server must be either Microsoft SQL7, or SQL2000.  
+The e-nspect database can be created either during the setup process, or later using the e-nspect Report Viewer.
+<p></p>
+
+</DIV>
+</DIV>
+
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+<h5>Client Tools</h5>
+The Client Tools have been implemented as Microsoft's Management Console (MMC) snap-ins.  This leverages your 
+existing knowledge and lets you focus on using the tool rather than learning a new GUI.
+<p>
+All e-nspect client tools are written in C++.  However, ATL templates are not used, instead raw COM interfaces are 
+implemented to allow for the full functionality of MMC to be utilised.
+<p>
+<b>e-nspect Event Sink Administration Module.</b>
+<p>
+The Event Sink Administration Module can be used to install, edit and delete all event sinks on an Exchange Server SMTP service.  
+As such care must be taken in its use, similar to the care taken when using the registry editor.  A mistake made whist using this 
+tool could result in a non functional SMTP server.
+<p>
+The Event Sink Administration Module is used to configure the following attributes:
+<ul>
+<li>Database host name
+	<ul>
+		<li>Property name - db_host
+		<li>Value - name of database server</li>     
+	</ul>
+<li>Temporary folder
+	<ul>
+		<li>Property name - LogFilePath
+		<li>Value - location of temporary folder (local to the 
+    Exchange server)</li>          
+	</ul>
+<li>Username
+	<ul>
+		<li>Property name - username
+		<li>Value - database server username</li>    
+	</ul>
+<li>Password
+	<ul>
+		<li>Property name - password
+		<li>Value - database server user's password</li>     
+	</ul></li>
+	
+</ul>
+The above configuration information is used by both the e-nspect event sink and the e-nspect2k Agent service.
+
+<p>
+<b>e-nspect Query.</b>
+<p>
+The e-nspect Query is the tool used to view the messaging reports.  The viewer queries the e-nspect database and 
+displays the results in a simple, clear and intuitive manner.
+
+<p></p>
+</DIV>
+</DIV>
+<DIV></DIV>
+
+<center valign="top">
+<hr>
+<span class="smallertext">© 2002. e-nspect</span></center>
+<DIV></DIV>
+</BODY>
+</HTML>

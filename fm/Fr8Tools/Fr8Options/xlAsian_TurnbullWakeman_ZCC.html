@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="fm.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+		<title>xlAsian_TurnbullWakeman_ZCC</title>
+		
+	</head>
+	<!--bgcolor="#c5c99b"-->
+	<body>
+		<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+			<TR>
+				<TD bgColor="#c8001e"><img src="logo.jpg"></TD>
+				<TD bgColor="#c8001e"><FONT color="white">providing </FONT><b><span style="COLOR: #f0d260">Shipping Risk</span>
+						<span style="COLOR: #f0d260">Management&nbsp;</span></b><FONT color="white">Solutions</FONT></TD>
+			</TR>
+		</TABLE>
+		<DIV id="nstext" valign="top">
+		<H1 class="relnotes" valign="top">xlAsian_TurnbullWakeman_ZCC</H1>
+		</div>
+		<!-- BODY -->
+		<DIV class="mytext">This function retrieves the required strike price of the 2nd leg in a collar strategy to achieve a zero cost premium. In fact, by adding or subtracting a fixed amount from the price of the 1st leg (argument: Price), the function can return the required strike price of the 2nd leg for any net premium requirement (i.e. the collar need not be zero cost, but it can entail either a debit or credit payment.) The pricing of both legs is performed using the Turnbull & Wakeman approximation model.</DIV>
+		<DIV class="syntax">
+			<table CLASS="buttonbartable" width="100%" border="1" cellpadding="1" cellspacing="1" ID="Table1">
+				<tr>
+					<td class="header">Argument</FONT></td>
+					<td class="header">Description</FONT></td>
+					<td class="header">Sample Data</td>
+					<td class="header">Switch</td>
+				</tr>
+				<tr>
+					<td> optType</td>
+					<td>Type of option (call/put) for the 2nd leg</td>
+					<td>1</td>
+					<td>1=Call, 2=Put</td>
+				</tr>
+				<tr>
+					<td>FFAprice</td>
+					<td>Price of the underlying FFA contract</td>
+					<td>20000</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>realAvg</td>
+					<td>Realised average price since the beginning of the average period</td>
+					<td>0.00</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>vol</td>
+					<td>Volatility (annualised) for the 2nd leg</td>
+					<td>40% or 0.40</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>timeMat1</td>
+					<td>Original time to maturity</td>
+					<td>0.50</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>timeMat2</td>
+					<td>Remaining time to maturity</td>
+					<td>0.25</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>timeBegAvg</td>
+					<td>Time to the beginning of the average period</td>
+					<td>0.00</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>intRate</td>
+					<td>Risk-free interest rate</td>
+					<td>4%  or  0.04</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>costCarry</td>
+					<td>Cost of carry</td>
+					<td>2%  or  0.02</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>price</td>
+					<td>Price of the 1st leg option</td>
+					<td>2000</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>leg1strike</td>
+					<td>Strike price of the 1st leg option</td>
+					<td>19000</td>
+					<td></td>
+				</tr>
+			</table>
+		</DIV>
+		<p>
+		<DIV class="syntax">
+		References 
+		<ul>
+			<li>Turnbull, S.M., and L.M. Wakeman (1991), “A Quick Algorithm for Pricing European Average Options”, Journal of Financial and Quantitative Analysis, 26, 377-389.</li>
+			<li>Press, W., S. Teukolsky, W. Vetterling, and B. Flannery (1992), Numerical Recipes in C, Cambridge University Press.</li>
+		</ul>	
+		</DIV>
+		<p>
+<!-- BOTTOM -->
+<center valign="top">
+			<hr>
+			<span class="smallertext">© 2005. FreightMetrics</span></center>
+		</DIV>
+	</body>
+</html>

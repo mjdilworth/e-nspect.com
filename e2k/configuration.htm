@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+<TITLE>e-nspect2000 Configuration</TITLE>
+</HEAD>
+<BODY>
+<div id="nsbanner" class="nsbanner">
+<div id="bannerrow2" class="bannerrow2">
+<TABLE CLASS="buttonbartable" CELLSPACING=0>
+	<TR ID="hdr" NOWRAP>
+	<TD width=95 NOWRAP><a href="index.html" target="_top"><IMG style="WIDTH: 121px; HEIGHT: 46px" height=44 src="logo.jpg" width=156></A></TD>
+	<TD NOWRAP>&nbsp;&nbsp;<FONT color=white>2000</FONT></TD>
+	<TD align=center>
+	<FONT color=white>an </FONT><b><span style="COLOR: #f0d260">e-nspect</span>
+						<span style="COLOR: #f0d260">Software&nbsp;</span></b><FONT color=white>design </FONT>
+						</TD>
+	</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="top">
+<H1 class="relnotes" valign="top">e-nspect2000 Configuration</H1>
+
+<DIV class="mytext">
+The following section details the configuration issues of e-nspect2000.
+
+</DIV></DIV>
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+Configuration of e-nspect2000 is undertaken using the Event Sink Administration Module.  This is installed as part of the
+Client Tools.  Please refer to the Event Sink Administration Module (ESAM) section for more details.
+<p>
+The first task is to locate the e-nspect sink. The e-nspect2000 event sink is registered within the 
+<b>Transport Events - OnPostCategorize</b>.  The Event Sink administration Module Guided tour section details how to
+navigate through a server's sink structure.
+<p>
+The e-nspect2k installation program installs the e-nspect sink into the Default SMTP Instance.  It may be
+that this location will be incorrect.  In this case you can simple delete the sink from this SMTP instance and install it again
+on the virtual SMTP instance of your choice (refer to the ESAM section for details on how to add new sinks).  
+Of course you can have the e-nspect sink configured to monitor all your virtual SMTP instance. More on this later.
+<p>
+The configurable parameters for the e-nspect2000 event sink are as follows:
+<ul>
+	<li>Global Properties
+	<ul>
+		<li>Priority - When the sink will "fire" in relation to other sinks. The default value of 24575 should be OK.
+		<li>Sink Name - The name you want to give the sink.
+		<li>Enabled - If enabled the sink will work.  If disabled the sink will not work.
+	</ul>
+	<li>Source Properties - there are no source properties for this sink
+	<li>Sink Properties
+	<ul>
+		<li>LogFilePath - the directory where e-nspect2000 will hold temporary data (each sink instance needs its own directory).
+		<li>db_host - the name of the database server.
+		<li>username - username for database access.
+		<li>password - the password for the database user.
+	</ul>
+</ul>
+All these are set during installation, but you can change them at any time if required.
+</div>
+</div>
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+On finding the e-nspect sink you should see this.
+<p>
+<img src="config1.jpg">
+</DIV>
+</DIV>
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+Double clicking on the e-nspect sink, or selecting its properties enables you to edit its properties, thus.
+<p>
+<img src="config2.jpg">&nbsp;<img src="config3.jpg">
+<p>
+Some items can not be changed, such as the Sink Class (always "e_report.collect") and GUID (determined by Exchange), but the others can be. 
+<p>
+An important configuration point to note is that if you are going to monitor multiple Virtual SMTP instances on the same Exchange
+server then each virtual smtp instance requires its own (unique) LogFilePath value.  in other words, make sure each virtual SMTP 
+instance is configured to use a different temporary directory.  There is one other thing to note.  If you create a new virtual SMTP instance
+using the Exchange System Manager then the new instance is a "replica" of the Default instance.  So you will have to edit the
+e-nspect sink properties to provide the new virtual SMTP instance with its own LogFilePath entry.
+</DIV>
+</DIV>
+
+<hr>
+<center valign="top">
+<span class="smallertext">© 2002. e-nspect</span></center></div>
+</BODY>
+</HTML>

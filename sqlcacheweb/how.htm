@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+<TITLE>How SQLCache Works</TITLE>
+<meta NAME="keywords"
+CONTENT="database, web, www, ADO, ASP, script, SQL, dynamic, performance, microsoft, accelerate, develop, software,
+high, site, portal, internet, COM, component, connection, server, string" >
+<meta name="description"
+CONTENT="SQLCache: high performance COM component to accelerate your dynamic ADO ASP web pages. Increase the processing
+capacity of your web and database servers using your existing code.">
+<META NAME="Copyright" CONTENT="sqlcache.com">
+<META NAME="Distribution" CONTENT="Global">
+<META NAME="Rating" CONTENT="General">
+<META NAME="Robots" CONTENT="All">
+<META NAME="Revisit-After" CONTENT="30 Days">
+<LINK REV=made href="mailto:info@sqlcache.com">
+</HEAD>
+<BODY>
+<! -- database web www ADO ASP script SQL dynamic performance microsoft accelerate develop software
+high site portal internet COM component connection server string  -->
+
+<div id="nsbanner" class="nsbanner">
+<div id="bannerrow2" class="bannerrow2">
+<TABLE CLASS="buttonbartable" CELLSPACING=0>
+	<TR ID="hdr" NOWRAP>
+		<TD width=95 NOWRAP><IMG height=10 src="spacer.gif" width=20><a href="index.html" target="_top"><IMG src="main.gif"></a></TD>
+		<TD NOWRAP>SQLCache</TD>
+	</TR>
+</TABLE>
+</div>
+</div>
+
+<DIV id="nstext" valign="top">
+<p>
+<H1 class="relnotes">How <i><strong>SQLCache</strong></i> Works</H1>
+<DIV class="mytext">
+
+</DIV>
+
+<DIV class="syntax">
+<i><strong>SQLCache's</strong></i> tunable caching technology stores frequently requested data where it is needed most, on the server requesting the content.  This means that as long as the cached data's Time To Live (TTL) has not expired the server will use its local copy with no request made of the remote data server.  If the TTL has expired then the data is refreshed. When refreshing its cache <i><strong>SQLCache</strong></i> issues the request and receives the data.  Therefore, the request is a single instance per front-end server and not multiple requests made on behalf of many different clients.  The number of connections made to the remote data server is thereby drastically reduced.
+<p>
+As previously stated, <i><strong>SQLCache</strong></i> uses fully tunable caching technology, which means its cache can be tuned in accordance to how often the data changes.  The cached data is given a Time To Live (TTL) parameter, which is used to determine how many seconds the data can be used before it requires refreshing.  
+<p>
+<i><strong>SQLCache</strong></i> has three tuning levels (Global, Service and Specific) to accommodate all circumstances and provide you with fine grain control.  
+
+Global tuning applies to all requests for data that use the <i><strong>SQLCache</strong></i> data provider and which are not covered in either the Service Level, or Specific SQL Command tuning parameters.
+
+Service level tuning applies to all commands made to a single data source (for example, a single database) and which are not specified in the Specific SQL Commands.
+
+Specific SQL Command tuning enables you to set the TTL for specific requests for data (normally SQL command statements).  Commands specified at this level override all other levels of tuning.
+
+
+</DIV>
+<DIV class="syntax">
+<i><strong>SQLCache</strong></i>'s operation can easily be described using the example of delivering dynamic web content using Microsoft's ADO.  With traditional ADO each SQL command involves a "round trip" to the database server.  This is depicted below.
+<p>
+BEFORE <i><strong>SQLCache</strong></i>
+</DIV>
+<center>
+<img src="2step.gif">
+</center>
+<DIV class="syntax">
+When <i><strong>SQLCache</strong></i> is installed and used on the web server there is no need for the SQL command to query the database server (if the TTL of the record is still valid).  Instead <i><strong>SQLCache</strong></i> provides the data direct for use in building the web page.  This is illustrated below.
+<p>
+AFTER <i><strong>SQLCache</strong></i>
+</DIV>
+<center>
+<img src="1step.gif">
+</center>
+
+
+<p>
+<P>&nbsp;</P>
+<hr>
+<center>
+<span class="smallertext">© 2002. SQLCache.com</span></DIV>
+</center>
+</BODY>
+</HTML>

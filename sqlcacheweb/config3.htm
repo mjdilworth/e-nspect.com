@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+<TITLE>SQLCache Specific Command Level Configuration Tasks</TITLE>
+<meta NAME="keywords"
+CONTENT="database, web, www, ADO, ASP, script, SQL, dynamic, performance, microsoft, accelerate, develop, software,
+high, site, portal, internet, COM, component, connection, server, string" >
+<meta name="description"
+CONTENT="SQLCache: high performance COM component to accelerate your dynamic ADO ASP web pages. Increase the processing
+capacity of your web and database servers using your existing code.">
+<META NAME="Copyright" CONTENT="sqlcache.com">
+<META NAME="Distribution" CONTENT="Global">
+<META NAME="Rating" CONTENT="General">
+<META NAME="Robots" CONTENT="All">
+<META NAME="Revisit-After" CONTENT="30 Days">
+<LINK REV=made href="mailto:info@sqlcache.com">
+</HEAD>
+<BODY>
+<! -- database web www ADO ASP script SQL dynamic performance microsoft accelerate develop software
+high site portal internet COM component connection server string  -->
+<div id="nsbanner" class="nsbanner">
+<div id="bannerrow2" class="bannerrow2">
+<TABLE CLASS="buttonbartable" CELLSPACING=0>
+	<TR ID="hdr" NOWRAP>
+		<TD width=95 NOWRAP><IMG height=10 src="spacer.gif" width=20><a href="index.html" target="_top"><IMG src="main.gif"></a></TD>
+		<TD NOWRAP>SQLCache</TD>
+	</TR>
+</TABLE>
+</div>
+</div>
+
+<DIV id="nstext" valign="top">
+<p>
+<H1 class="relnotes">SQLCache Specific Command Level Configuration Tasks</H1>
+<DIV class="mytext">
+
+</DIV>
+
+<DIV class="syntax">
+The "TTL", "Provider", "Data Source", "Username", "Password", "Database" and "Command" are Specific Command Level SQLCache Parameters.
+<p>
+<center>
+<img src="config3.jpg">
+</center>
+<p>
+These parameters are edited either by double clicking on the entry, or by selecting its properties.
+<p>
+<center>
+<img src="config3a.jpg">
+</center>
+
+<p>
+<p>
+Specific SQL Command Configuration Parameters are as follows:<p>
+<b>Provider</b><br>
+When connecting to Microsoft's SQL server there are two options, SQLOLEDB and MSDASQL.
+<UL >
+<LI>Microsoft OLE DB Provider for SQL Server (SQLOLEDB), which maps OLE 
+DB interfaces and methods over SQL Server data sources.<BR><BR>
+<LI>Microsoft OLE DB Provider for ODBC (MSDASQL), which maps OLE DB interfaces and methods to ODBC 
+APIs. OLE DB consumers connect to an instance of SQL Server using the SQL Server 
+ODBC driver as an intermediary layer. </LI></UL>
+Microsoft recommend SQLOLEDB when connecting to SQL Server 2000 and MSDASQL for previous versions of SQL Server.
+<p>
+Generally, any OLE DB compliant provider can be used with SQLCache.
+<p>
+<b>Data Source</b><br>
+When the Provider used is MSDASQL the DSN should be the name of the System DSN used to connect to the database server.  
+If SQLOLEDB is used the DSN entry should be the name of the database server.<br>
+<b>Tip: </b>
+Create a DSN to your database using, as its name, the name of the database server (for example, sqlserver.internal.com).
+In this way both SQLOLEDB and MSDASQL can be used.
+<p>
+<b>Username</b><br>
+This is the username used by the client to connect to the database.
+<p>
+<b>Password</b><br>
+This is the password used by the client to connect to the database.
+<p>
+<b>Database</b><br>
+This is the name of the database to connect to.
+<p>
+<b>Time to Live(TTL)</b><br>
+This is the value, in seconds, that you want to cache the data on the accelerated host.  
+After this time period has elapsed the data is refreshed.
+<p>
+<b>Command</b><br>
+This is the specific command that you want to tune.
+
+</DIV>
+<p>
+<P>&nbsp;</P>
+<hr>
+<center>
+<span class="smallertext">© 2002. SQLCache.com</span></DIV>
+</center>
+</BODY>
+</HTML>

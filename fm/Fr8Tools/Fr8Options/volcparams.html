@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="fm.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+		<!--TITLE-->
+		<title>Volatility Calculator</title>
+		<!--TITLE_END-->
+		
+	</head>
+	<!--bgcolor="#c5c99b"-->
+	<body>
+		<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+			<TR>
+				<TD bgColor="#c8001e"><img src="logo.jpg"></TD>
+				<TD bgColor="#c8001e"><FONT color="white">providing </FONT><b><span style="COLOR: #f0d260">Shipping Risk</span>
+						<span style="COLOR: #f0d260">Managment&nbsp;</span></b><FONT color="white">Solutions</FONT></TD>
+			</TR>
+		</TABLE>
+		<DIV id="nstext" valign="top">
+		<!--HEADING-->
+		<H1 class="relnotes" valign="top">Volatility Calculator - Input & Output Parameters</H1>
+		<!--HEADING_END-->
+		</div>
+		
+		<DIV class="mytext">
+		<!--INTRO_TEXT-->
+			Below we briefly describe the input and output parameters of the Volatility Calculator:- 
+		<!--INTRO_TEXT_END-->
+		</DIV>
+		<p>
+				
+				<DIV class="syntax">
+		<!--BODY_TEXT-->
+		<b>Date (Column A),Data Column B, Cell B3:</b> The program allows the user to cut and paste (or manually type) into the appropriate columns the dates and data 
+		of an index or route that is being calculated/studied. Cell B3 allows the user to manually input a title to the column 
+		for sake of clarity. In our example the user is calculating the volatility of the BHMI spot market.
+		
+		<p>
+			
+			<p>
+		<b>Column C:</b> This column gives the daily, weekly, monthly (depending on users input in column A) volatility of price 'returns' in percentage terms
+		   and <b>NOT</b> the volatility of prices.  		
+		<p>
+			
+			<p>
+		<b>Calculation Parameters:</b> Here the user (via the drop down menu) is given the choice of calculating volatility by the 'moving average' method or by the 'exponentially
+		   weighted moving average method'.		
+		   <p>
+			
+			<p>
+		<b>Moving Average:</b> Here the user need only input a figure for the 'Time Window' the 'EWMA decay factor' is N/A.
+				<p>
+			
+			<p>
+		<b>Exponentially Weighted Moving Average (EWMA):</b> The user is not required to add any input as EWMA uses the 'EWMA decay factor'* function only.		
+		
+			<p>
+			
+			<p>
+		
+		<!--BODY_TEXT_END-->
+		</DIV>
+	<DIV class="mytext">	
+  <b>* Note:</b> FreightMetrics uses a 'decay factor' of <b>0.94</b> as research has shown that this number is suitably accurate for freight volatility.
+  </DIV>
+			<hr>
+		<p>
+			
+			<p>
+				<p>
+			
+			<p>
+		<DIV id="nstext" valign="top">
+		<!--HEADING-->
+		<H1 class="relnotes" valign="top">Correlation Calculator - Input & Output Parameters</H1>
+		<!--HEADING_END-->
+		</div>
+		
+		<DIV class="mytext">
+		<!--INTRO_TEXT-->
+			The input parameters of the Correlation Calculator are similar to the parameters of the Volatility Calculator as shown  above.
+			The obvious difference is in Column B and Column C where the user adds the data (through 'cut and paste' or manually) that will be calculated/studied
+			for correlation. As discussed above the correlation will be of price 'returns' in percentage terms and <b>NOT</b> the correlation of prices
+			in absolute terms. Cells B3 and C3 are customisable to allow a user to input their own meaningful title for sake of clarity.
+		<!--INTRO_TEXT_END-->
+		</DIV>
+		<p>
+			
+		<p>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</DIV><center valign="top">
+				<p>
+			
+			<p>
+				
+			<span class="smallertext">© 2005. Freightmetrics</span></center>
+		</DIV>
+	</body>
+</html>

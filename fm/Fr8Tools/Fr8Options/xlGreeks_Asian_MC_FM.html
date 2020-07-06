@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="fm.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+		<title>xlGreeks_Asian_MC_FM</title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<!--bgcolor="#c5c99b"-->
+	<body>
+		<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+			<TR>
+				<TD bgColor="#c8001e"><img src="logo.jpg"></TD>
+				<TD bgColor="#c8001e"><FONT color="white">providing </FONT><b><span style="COLOR: #f0d260">Shipping Risk</span>
+						<span style="COLOR: #f0d260">Management&nbsp;</span></b><FONT color="white">Solutions</FONT></TD>
+			</TR>
+		</TABLE>
+		<DIV id="nstext" valign="top">
+			<H1 class="relnotes" valign="top">xlGreeks_Asian_MC_FM</H1>
+		</DIV>
+		<!-- BODY AREA-->
+		<DIV class="mytext">This function calculates the risk statistics (delta, gamma, 
+			vega...) for Asian style options on freight using an extended Monte Carlo 
+			simulation model developed by FreightMetrics to account for the full forward 
+			curve data. For further information on how the corresponding option premium is 
+			obtained for the purpose of estimating the risk sensitivities, please refer to 
+			the function xlAsian_MC_FM.</DIV>
+		<DIV class="syntax">
+			<table CLASS="buttonbartable" width="100%" border="1" cellpadding="1" cellspacing="1" ID="Table1">
+				<tr>
+					<td class="header">Argument</FONT></td>
+					<td class="header">Description</FONT></td>
+					<td class="header">Sample Data</td>
+					<td class="header">Switch</td>
+				</tr>
+				<tr>
+					<td>keepRandom</td>
+					<td>Keep previous random numbers</td>
+					<td>FALSE</td>
+					<td>FALSE, TRUE</td>
+				</tr>
+				<tr>
+					<td>result</td>
+					<td>Selection of required risk statistic</td>
+					<td>2</td>
+					<td>2=Delta, 3=Gamma, 4=Vega, 5=Theta, 6=Rho</td>
+				</tr>
+				<tr>
+					<td>valueDate</td>
+					<td>Value date</td>
+					<td>01/09/2005</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>avgBeg</td>
+					<td>Start of average period</td>
+					<td>01/01/2006</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>avgEnd</td>
+					<td>End of average period</td>
+					<td>31/03/2006</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>optType</td>
+					<td>Type of option (call/put)</td>
+					<td>1</td>
+					<td>1=Call, 2=Put</td>
+				</tr>
+				<tr>
+					<td>strike</td>
+					<td>Strike price</td>
+					<td>22000</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>fwdCurve</td>
+					<td>Forward curve of the underlying asset</td>
+					<td>see note below</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>vol</td>
+					<td>Volatility (annualised)</td>
+					<td>40% or 0.40</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>intRate</td>
+					<td>Risk-free interest rate</td>
+					<td>4% or 0.04</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>simRuns</td>
+					<td>Number of simulation runs</td>
+					<td>5000</td>
+					<td></td>
+				</tr>
+			</table>
+		</DIV>
+		<p>
+			<DIV class="syntax">
+				Note: The fwdCurve argument is passed on in the form of an Excel range 
+				consisting of 2 columns. The first column contains dates and the second column 
+				contains the corresponding forward prices. No headings are required at the top 
+				row of the range. The range can be generated from the xlFwdCurve_full function 
+				(with curveType=1).
+			</DIV>
+		</p>
+		<DIV class="syntax">
+			References
+			<ul>
+				<li>
+					FreightMetrics (2005), “Option Pricing: Mind the Curve”, 
+					www.freightmetrics.com.</li>
+				<li>
+					Glasserman, P. (2004), Monte Carlo Methods in Financial Engineering, Springer.</li>
+				<li>
+					Jaeckel, P. (2003), Monte Carlo Methods in Finance, Wiley.</li>
+				<li>
+					Tavella, D. (2002), Quantitative Methods in Derivatives Pricing, Wiley.</li>
+			</ul>
+		</DIV>
+		<!--BOTTOM-->
+		<center valign="top">
+			<hr>
+			<span class="smallertext">© 2005. FreightMetrics</span></center>
+		</DIV>
+	</body>
+</html>

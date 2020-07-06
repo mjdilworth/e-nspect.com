@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+<TITLE>e-nspect2000 Installation</TITLE>
+</HEAD>
+<BODY>
+<div id="nsbanner" class="nsbanner">
+<div id="bannerrow2" class="bannerrow2">
+<TABLE CLASS="buttonbartable" CELLSPACING=0>
+	<TR ID="hdr" NOWRAP>
+	<TD width=95 NOWRAP><a href="index.html" target="_top"><IMG style="WIDTH: 121px; HEIGHT: 46px" height=44 src="logo.jpg" width=156></a></TD>
+	<TD NOWRAP>&nbsp;&nbsp;<FONT color=white>2000</FONT></TD>
+	<TD align=center>
+	<FONT color=white>an </FONT><b><span style="COLOR: #f0d260">e-nspect</span>
+						<span style="COLOR: #f0d260">Software&nbsp;</span></b><FONT color=white>design </FONT>
+						</TD>
+	</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="top">
+<H1 class="relnotes" valign="top">e-nspect2000 Installation</H1>
+
+<DIV class="mytext">
+e-nspect2000 has a flexible architecture.  This means there are several possible installation scenarios.  
+You could choose to install all e-nspect components on one machine (useful in a test environment fro evaluation purposes), 
+or you could install e-nspect components onto several machines in your network.  This latter scenario is preferred for production
+environments.
+
+
+</DIV></DIV>
+
+
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+e-nspect2000 has two setup programs.  One is called e-nspectDB.exe the other is called e-nspect2k.exe.
+<p>
+e-nspectDB.exe is used to install Microsoft's SQL 2000 Desktop Engine (MSDE).  This is a freely distributable desktop version of their
+SQL 2000 Server.
+<p>
+<b>e-nspectDB</b><p>
+The e-nspectDB.exe setup is a "wrapper" installation for the windows installer.  You will be able to select a destination folder
+for the installation. As the MSDE has a 2GB database limit it would seem wise to install onto a file system that has at least 2GB 
+of free space.
+<p>
+Also, the e-nspectDB.exe setup program will configure the SQL installation with the following user credentials:
+<p>
+username = "sa"  (no quotes)<br>
+password = "" (no quotes.. yes.. blank!)
+<p>
+You can of course change these after installation.
+<p>
+<b>e-nspect2k</b><p>
+e-nspect2k.exe is used to install three components.  You can select which to install at run time, because you may not want to install
+all 3 on the same machine.  The three components are:
+<p>
+<b>Client Tools</b>
+<br>Used to configure the Exchange Server Components and to view reports.
+<p>These can be installed on their own (no other components selected) onto a machine used purely for configuration and report viewing (for example, a management workstation).
+<p>
+<b>Exchange Server Components</b>
+<br>Used to collect and process data.  This component is required to be installed on the Exchange server computer and nowhere else.
+<p>
+<b>Database Services</b>
+<br>Used to store the processed data.  This component should be selected for installation only if you want to create the e_nspect database at installation time.  If you select this component you have to have a database server already running.  This could be the host where you previously ran the e-nspectDB setup program or another SQL server.  In either case you need to know the SQL server host name, and the username and password of an account which can create databases.  The e-nspectDB setup program initialises with the username "sa" (no quotes) and a blank password.
+<p>
+It is not necessary to create the database during the installation process as it can be created later using the Client tools.
+<p>
+Please refer to the <a href="architecture.htm">architecture</a> section for details on these components.
+</DIV></DIV>
+
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+Before installing e-nspect2000 it is a good idea to ask yourself these type of questions:
+<ol>
+<li>Do I have an existing SQL Database server?
+<li>If the answer to the above is yes, then what is the machine's name?
+<li>If the answer to the above is no, then where should I install the SQL Desktop Engine?
+<li>On what machine is the Exchange SMTP service that I wish to monitor located?
+<li>How many Exchange SMTP service that I wish to monitor?
+<li>Does the Exchange SMTP server have many virtual SMTP instances that I wish to monitor?
+<li>On what machine do I want to install the client tools?
+<li>Is this a production environment?
+<li>How many machines do I have at my disposal?
+</ol>
+By asking and answering these type of questions you will be in a better position to determine your needs.
+</DIV>
+</DIV>
+
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+<b>A simple evaluation, or a low usage scenario</b><br>
+In situations where you want to evaluate e-nspect2000, perhaps in a isolated environment, it is possible to install all components onto 
+a single machine.  Of course, this machine has to be running the Exchange Server.  Also, e-nspect provides a setup program for
+Microsoft's freely distributable SQL2000 Desktop Engine. This too can be installed onto the same machine.  This type of installation 
+is ideal for evaluation purposes.
+<p>
+For low usage production scenarios the above architecture can also be used.  However, the use of the SQL Desktop Engine and 
+Exchange Server on the same machine could cause performance issues if your sites usage characteristics increase.
+<p>
+It would be better to separate the Exchange and SQL servers onto different machines.
+<p>
+</DIV>
+</DIV>
+
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+<b>Medium usage scenario</b><br>
+For sites of medium usage characteristics it would definitely be advisable to separate the SQL and Exchange services onto
+different hosts.  The client tools can be installed and used on either, or both systems.
+<p>
+
+</DIV>
+</DIV>
+
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+<b>High usage scenario</b><br>
+For sites of high usage characteristics definitely separate the SQL and Exchange services onto
+different hosts.  Also, if possible do not use the SQL2000 Desktop Engine.  Instead use the fully fledged version of either 
+Microsoft's SQL7 or SQL2000 database server.
+<p>
+The SQL2000 Desktop Engine has some limitations:
+<ul>
+<li>2GB limit per database.
+<li>Performance degradation with an increase in concurrent connections.
+</ul>
+The above limitations would become acute especially if you were monitoring multiple SMTP hosts and SMTP instances and collecting
+the data to a single e-nspect database.
+
+</DIV>
+</DIV>
+
+<p>
+<hr>
+</DIV>
+<center valign="top">
+<span class="smallertext">© 2002. e-nspect</span></center></div>
+</BODY>
+</HTML>

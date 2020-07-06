@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="fm.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+		<!--TITLE-->
+		<title>Option Pricing Calculator</title> 
+		<!--TITLE_END-->
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<!--bgcolor="#c5c99b"-->
+	<body>
+		<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+			<TR>
+				<TD bgColor="#c8001e"><img src="logo.jpg"></TD>
+				<TD bgColor="#c8001e"><FONT color="white">providing </FONT><b><span style="COLOR: #f0d260">Shipping 
+							Risk</span> <span style="COLOR: #f0d260">Management&nbsp;</span></b><FONT color="white">Solutions</FONT></TD>
+			</TR>
+		</TABLE>
+		<DIV id="nstext" valign="top">
+			<!--HEADING-->
+			<H1 class="relnotes" valign="top">Option Pricing Calculator - Input & Output 
+				Parameters.</H1>
+			<!--HEADING_END-->
+		</DIV>
+		<p>
+			<DIV class="mytext">
+				<!--INTRO_TEXT-->
+				Below we briefly describe the input and output parameters of the Option Pricing 
+				Calculator. 
+				<!--INTRO_TEXT_END-->
+			</DIV>
+		<p>
+			<DIV class="syntax">
+				<!--BODY_TEXT-->
+				<b>INPUT PARAMETERS:-</b>
+				<p></p>
+				<b>Selecting the model type:</b> An option pricing model is a mathematical 
+				formula which takes current market factors as inputs and calculates an option's 
+				theoretical fair market value and associated risk parameters called 'Greeks'. 
+				This calculator contains three option models; FreightMetrics' MonteCarlo(Fr8), 
+				MonteCarlo(Generic), and Turnbull&Wakeman. Each model has its own methodology 
+				and further information on the models can be found from reference material.
+				<p>
+					<b>Value Date:</b>
+				The system automatically inputs today's date.
+				<p>
+					<b>Selecting the underlying index:</b>
+				The underlying is the asset or instrument on which an options payoff is based. 
+				The user must choose the appropriate index or route from the drop down menu.
+				<p>
+					<b>Period:</b>
+				The user must select the appropriate contract from the drop down menu.
+				<p>
+					<b>Avg.period start / Avg.period end:</b>
+				The system automatically generates the calendar dates of the chosen contract as 
+				an aid to the user.
+				<p>
+					<b>Call / Put:</b>
+				The user must select whether the fair market value calculation will be for a 
+				Call or a Put option.
+				<p>
+					<b>Strike: </b>
+				The strike price is the price at which an option permits its owner to buy or 
+				sell the underlying asset.
+				<p>
+					<b>Volatility (%):</b>
+				In simple terms volatility is a measure of momentum in a market. Markets that 
+				move slowly are low-volatility markets; markets that move quickly are 
+				high-volatility markets.
+				<p>
+					<b>Risk-free rate (%):</b>
+				The interest rate is the current risk-free interest rate, often described as 
+				the rate the Federal Reserve Bank charges banks to borrow money (i.e. Fed Funds 
+				Rate).
+				<p>
+					<b>Quantity: </b>
+				Here the user can manually input the number of days, or tonnes, of the contract 
+				that will be calculated. Ticking the 'Full' box will instruct the system to 
+				input the full number of 'contract days', or 'tonnes', for the chosen contract.
+				<p>
+					<b>Flat Rate: </b>
+				Here the system automatically fills the applicable flat rate to convert 
+				Worldscale rates to $/tonne.
+				<p>
+					<b>Simulation runs:</b>
+				Here the user has the ability to choose the number of simulated runs for both 
+				the FreightMetrics MonteCarlo (Fr8) and the Montecarlo (Generic) models. 
+				Calculations involving many 'runs' leads to more accurate pricing but requires 
+				longer computational time.
+			</DIV>
+		<p>
+			<DIV class="syntax">
+				<!--INTRO_TEXT-->
+				<b>OUTPUT PARAMETERS:-</b> 
+				<!--INTRO_TEXT_END-->
+				<p>
+				Output given by the system represents the theoretical 'fair market value' price 
+				of the option and option risk parameters called "Greeks". The "Greeks" are used 
+				to gauge how different movements in the market will affect the price of the 
+				option.
+				<p>
+					<b>Option price and the 'Greeks'</b>
+				<p>
+					<b>Output Statistic:</b>
+				Here the user has the ability to choose from the drop down menu the output as 
+				Price, Delta, Gamma, Vega, Theta, or Rho.
+				<p>
+					<b>Price:</b>
+				The theoretical fair market value of the option, which is used to determine if 
+				arbitrage opportunities exist in the market place by checking if actual option 
+				values are trading over or under the fair market value.
+				<p>
+					<b>Delta:</b>
+				The ratio of the change in an option’s price to a given change in the price of 
+				the underlying asset or instrument. If the underlying changed by a given amount 
+				the option price would change by a fraction (the delta) of that amount.
+				<p>
+					<b>Gamma:</b>
+				The rate of change of an option’s delta with respect to a change in the price 
+				of the underlying assets or instrument. If the underlying changed by a given 
+				amount the option delta would change by a fraction (the gamma) of that amount.
+				<p>
+					<b>Theta:</b>
+				The rate of change of an option’s price with respect to time. It is a measure 
+				of the erosion in the time value of the option as it moves closer to expiration
+				<p>
+					<b>Vega:</b>
+				The rate of change of an option’s price with respect to the change in the 
+				volatility of the underlying asset or future.
+				<p>
+					<b>Rho:</b>
+				The rate of change of an option’s price with respect to the change in the 
+				risk-free interest rate.
+				<p>
+					<b>Price expression: </b>
+				Here the user has the ability to choose the way the option's 'price' is 
+				expressed from the drop down menu in terms of 'Rate' ($/day or $/tonne or WS) or 'Amount' 
+				($).
+				<p>
+					<b>Delta expression:</b>
+				Here the user has the ability to choose the way the option's 'delta' is 
+				expressed from the drop down menu in terms of "Contracts" (or equivalent ships) or "Quantity" (calendar days or metric tonnes).
+				<p>
+					<b>'Keep previous random numbers':</b>
+				For MonteCarlo models only. Ticking this box instructs the system to keep the 
+				numbers randomly generated from the current simulation so that the user can 
+				change various parameters and compare output statistics.
+			</DIV>
+		<p>
+			<DIV class="syntax">
+				<!--INTRO_TEXT-->
+				<b>TERMINAL PAYOFF:-</b> 
+				<!--INTRO_TEXT_END-->
+				<p>
+					<b>Buy/Sell: </b>By selecting <u>Buy</u> or <u>Sell</u>
+				from the drop down menu the user has the ability to view diagramatically the 
+				'terminal payoff' when buying or selling a particular option.
+				<p>
+					<b>Settlement range:</b>
+				Allows the user to adjust the x-axis parameters of the 'payoff diagram'.
+				<p>
+				<p>
+					<b>For FreightMetrics MonteCarlo (Fr8) model only.</b>
+				<p>
+					<b>Forward curve:</b>
+				Here the user is required to generate the forward curve using the data manager 
+				from the forward curve builder before using the FreightMetrics MonteCarlo (Fr8) 
+				model. 
+				<!--BODY_TEXT_END-->
+			</DIV>
+			<center valign="top">
+				<hr>
+				<span class="smallertext">© 2005. FreightMetrics</span></center>
+		</DIV>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+<TITLE>e-nspect2000 Event Sink Administration Module - Event Types</TITLE>
+</HEAD>
+<BODY>
+<div id="nsbanner" class="nsbanner">
+<div id="bannerrow2" class="bannerrow2">
+<TABLE CLASS="buttonbartable" CELLSPACING=0>
+	<TR ID="hdr" NOWRAP>
+	<TD width=95 NOWRAP><a href="index.html" target="_top"><IMG style="WIDTH: 121px; HEIGHT: 46px" height=44 src="logo.jpg" width=156></a></TD>
+	<TD NOWRAP>&nbsp;&nbsp;<FONT color=white>2000</FONT></TD>
+	<TD align=center>
+	<FONT color=white>an </FONT><b><span style="COLOR: #f0d260">e-nspect</span>
+						<span style="COLOR: #f0d260">Software&nbsp;</span></b><FONT color=white>design </FONT>
+						</TD>
+	</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="top">
+<H1 class="relnotes" valign="top">e-nspect2000 Event Sink Administration Module - Event Types</H1>
+
+<DIV class="mytext">
+Within each event category there are specific types of event, where sinks can be registered.
+</DIV></DIV>
+<p>
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+<ul>
+<li><b>Protocol Event Sinks:</b></li>
+	<ul>
+	<li>OnInboundCommand : This event occurs when a protocol command is received by the SMTP service. 
+	<li>OnServerResponse : This event occurs when a SMTP service is going to respond to a previously received command. 
+	<li>OnSessionStart : This event occurs before the "EHLO" protocol command.
+	<li>OnMessageStart : This event occurs before the "MAIL FROM" protocol command.
+	<li>OnPerRecipient : This event occurs before the "RCPT TO" protocol command.
+	<li>OnBeforeData : This event occurs before the "DATA" protocol command.
+	<li>OnSessionEnd : This event occurs before the "QUIT" protocol command.
+	</ul>
+<p>
+
+<li><b>Transport Event Sinks:</b></li>
+	<ul>
+	<li>Store Events : Responsible for providing the underlying storage mechanism for the message. 
+	Store events are fired many times as the message is processed by the SMTP service. 
+	<li>OnTransportSubmission : This event occurs when a message is submitted to the transport core. 
+	<li>OnPreCategorize : This event occurs before the message is sent to the categorizer.
+	<li>Categorizer Events : Provides categorization information about the message to the Advanced Queue.
+	<li>OnPostCategorize : This event occurs after the message has been categorized.
+	<li>OnTransportRouter : These sinks are responsible for determining the message type and its next hop. Also, the router is 
+is used by the Advanced Queue to determine link state status for various destinations.
+	<li>MsgTrackLog : A frequently occurring event firing when message-tracking information is being gathered for the message.
+	<li>DnsResolver : This event occurs when a domain name needs to be translated into an IP address.
+	<li>MaxMsgSize : This event occurs when a submitted message exceeds the configured maximum message size.
+	</ul>
+</ul>
+
+</DIV>
+</DIV>
+<p>
+<DIV valign="top">
+<DIV class="syntax" id=DIV1>
+<center>
+<img src="type.jpg">
+</center>
+</DIV>
+</DIV>
+<DIV valign="top">
+
+<DIV class="syntax" id=DIV1>
+
+PLEASE NOTE:<p>
+Incorrect use of the e-nspect Event Sink Administration Module can seriously damage you SMTP installation.
+</DIV>
+</DIV>
+<p>
+<hr>
+</DIV>
+<center valign="top">
+<span class="smallertext">© 2002. e-nspect</span></center></div>
+</BODY>
+</HTML>

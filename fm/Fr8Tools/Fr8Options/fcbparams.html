@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="fm.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+		<!--TITLE-->
+		<title>Forward Curve Builder</title>
+		<!--TITLE_END-->
+		
+	</head>
+	<!--bgcolor="#c5c99b"-->
+	<body>
+		<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+			<TR>
+				<TD bgColor="#c8001e"><img src="logo.jpg"></TD>
+				<TD bgColor="#c8001e"><FONT color="white">providing </FONT><b><span style="COLOR: #f0d260">Shipping Risk</span>
+						<span style="COLOR: #f0d260">Managment&nbsp;</span></b><FONT color="white">Solutions</FONT></TD>
+			</TR>
+		</TABLE>
+		<DIV id="nstext" valign="top">
+		<!--HEADING-->
+		<H1 class="relnotes" valign="top">Forward Curve Builder - Input & Output Parameters</H1>
+		<!--HEADING_END-->
+		</div>
+		
+		<DIV class="mytext">
+		<!--INTRO_TEXT-->
+			Below we briefly describe the input and output parameters of the Forward Curve Builder*:- 
+		<!--INTRO_TEXT_END-->
+		</DIV>
+		<p>
+			
+		<p>
+			
+		<p>
+				
+		
+		<DIV class="syntax">
+		<!--BODY_TEXT-->
+		<b>Contract:</b> The program allows the user to choose a contract from the drop down menu. There are certain logical rules that should
+		 be applied when building your forward curve. For instance;
+		 <p>
+		 <b>.</b> The contracts chosen should be sequential and there should be no overlapping. For example, Q4-05 should come before Q1-06 in the list.
+		 	
+		 	<p> 
+		 	<b>.</b> The user will obtain better 'price discovery' if he uses all the FFA prices available to him. For instance by obtaining
+		 	   and inputing prices for Q1-06 and Q2-06 contracts seperately instead of Q1&Q2-06 or by inputing prices for the Q1&Q2-06 and Q3&Q4-06
+		 	  contracts instead of CAL-06 will lead to a more accurate/realistic 'forward curve'.  
+				<p> 
+					<p>
+			<b>Period (From) & Period (To):</b> As an aid to the user the system will automatically fill in the appropriate dates for the contract			
+				<p>
+			
+		<p>
+			<b>Price:</b> The user should input the market price of the contract manually into each appropriate box.
+				
+				<!--BODY_TEXT_END-->
+		
+		<p>
+			
+			<p>
+		<b>Type of Curve:</b> This input box allows the user to choose between a 'Term Structure' (in simple terms the system
+		  calculates every price on a daily basis reflecting the implied spot rate for the term of the market chosen. For a more
+		  detailed explanation of 'Term Structure' please refer to the FreightMetrics document 'Freight Forward Curves: Techniques
+		  and Applications).   In reference to the 'Forward (implied spot)'calculation - here the system calculates each daily price
+		   reflecting the implied future spot rate for a particular date.
+		<p>
+			<p>
+				
+				<b>Interpolation Method:</b> FreightMetrics' systems use the cubic-spline formula to interpolate as preferred methodology.
+				
+				<p>
+			<p>
+		<b>Frequency:</b> The user can calculate on a daily, weekly or monthly basis by inputing 1 for daily, 7 for weekly etc 		
+				<p>
+			<p>
+		<b>Spot Price:</b> Here the user should input the spot price of the market under observation.		
+		<p>
+			<p>
+		<b>Single Date Calculation:</b> Here the software allows the user to calculate the forward rate for a single specific date.	
+		<p>
+			<p>
+	</DIV>
+	<p>	
+	<DIV class="mytext">		
+  <b>* Note:</b> For users of the FreightMetrics MonteCarlo (Fr8) model for option pricing - it is essential that the user creates a forward curve on the 
+  <b>'Forward Curve Builder'</b> template first and then transfers (simply by using a cut & paste operation) the data into the FreightMetrics Option Calculator.
+  </Div>
+			<hr>
+		<p>
+			
+			<p>
+				<p>
+			
+			<p>
+	<DIV id="nstext" valign="top">
+		<!--HEADING-->
+		<H1 class="relnotes" valign="top">Implied Forward Rates - Input & Output Parameters</H1>
+		<!--HEADING_END-->
+		</div>
+		
+		<DIV class="mytext">
+		<!--INTRO_TEXT-->
+			Below we briefly describe the Implied Forward Rates template.
+		<!--INTRO_TEXT_END-->
+		</DIV>
+		<DIV class="syntax">
+		
+		<b>Implied Forward Rates:</b> As the title implies this template allows the user to calculate implied forward rates of a contract for
+		   specific monthly and quarterly dates.
+			<p>
+			
+		<p>
+		<b>Copy from Builder:</b> This function allows the user to automatically extract data from the 'Forward Curve Builder' and place it 
+		in the 'Term Structure' columns of the 'Implied Forward Rates' template.
+		<p>
+		 <b> Note:</b> The user must have the '<u>Term Structure</u>' box appear next to 
+		'<u>Type of Curve</u>' in the Calculation Parameters section of the Forward Curve Builder template before using the '<u>Copy from Builder</u>' function.
+		<p>
+			
+		<p>
+		<b>Calculation Parameters:</b> Here the user should input a specific 'beginning date' and 'ending date' of the forward curve being studied.
+		The 'Implied fwd rate' output in cell E10 is the average implied forward rate for the period specified by the user. 	
+		
+		
+		</DIV><center valign="top">
+				<p>
+			
+			<p>
+				
+			<span class="smallertext">© 2005. Freightmetrics</span></center>
+		</DIV>
+	</body>
+</html>

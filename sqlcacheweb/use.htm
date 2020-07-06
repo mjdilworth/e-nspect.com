@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+<TITLE>How to use SQLCache</TITLE>
+<meta NAME="keywords"
+CONTENT="database, web, www, ADO, ASP, script, SQL, dynamic, performance, microsoft, accelerate, develop, software,
+high, site, portal, internet, COM, component, connection, server, string" >
+<meta name="description"
+CONTENT="SQLCache: high performance COM component to accelerate your dynamic ADO ASP web pages. Increase the processing
+capacity of your web and database servers using your existing code.">
+<META NAME="Copyright" CONTENT="sqlcache.com">
+<META NAME="Distribution" CONTENT="Global">
+<META NAME="Rating" CONTENT="General">
+<META NAME="Robots" CONTENT="All">
+<META NAME="Revisit-After" CONTENT="30 Days">
+<LINK REV=made href="mailto:info@sqlcache.com">
+</HEAD>
+<BODY>
+<! -- database web www ADO ASP script SQL dynamic performance microsoft accelerate develop software
+high site portal internet COM component connection server string  -->
+<div id="nsbanner" class="nsbanner">
+<div id="bannerrow2" class="bannerrow2">
+<TABLE CLASS="buttonbartable" CELLSPACING=0>
+	<TR ID="hdr" NOWRAP>
+		<TD width=95 NOWRAP><IMG height=10 src="spacer.gif" width=20><a href="index.html" target="_top"><IMG src="main.gif"></a></TD>
+		<TD NOWRAP>SQLCache</TD>
+	</TR>
+</TABLE>
+</div>
+</div>
+
+<DIV id="nstext" valign="top">
+<p>
+<H1 class="relnotes">How to use <i><strong>SQLCache</strong></i></H1>
+<DIV class="mytext">
+
+</DIV>
+
+<DIV class="syntax">
+For the most common method of using <i><strong>SQLCache</strong></i> we can take the example of a VBScript ASP page connecting to MS SQL Server Database.
+<p>
+We begin in the normal way by getting the connection object.
+<p>
+<strong>Set oConn = Server.CreateObject("ADODB.Connection")</strong>
+<p>
+In normal ADO would open the connection using the following string, which includes a reference to a system data source name.
+<p>
+<strong>oConn.Open  "DSN=myDSN;UID=sa;PWD=;DATABASE=mydatabase"</strong>
+<p>
+or we could use the provider directly:
+<p>
+<strong>oConn.Open "Provider=SQLOLEDB;Data Source=myserver;User Id=sa;Password=;Initial Catalog=mydatabse"</strong>
+<p>
+and then we would issue SQL commands that would return a recordset, like this:
+<p>
+<strong>Set oRs = oConn.Execute("SELECT * From authors")</strong>
+<p>
+Using <i><strong>SQLCache</strong></i>, all we need to do is change the connection string, which would become:
+<p>
+<strong>oConn.Open "Provider=<i><strong>SQLCache</strong></i>.Cache;Original Provider=MSDASQL;User Id=sa;Password=;Data Source=myDSN;Initial Catalog=mydatabase"</strong>
+<p>
+The above is using the OLE DB provider for ODBC, for backward compatibility.  For connections to MS SQL 2000 server the native OLE DB provider could be used instead. Like this:
+<p>
+<strong>oConn.Open "Provider=<i><strong>SQLCache</strong></i>.Cache;Original Provider=SQLOLEDB;User Id=sa;Password=;Data Source=serverName;Initial Catalog=mydatabase"</strong>
+<p>
+And we can then use as normal, for example:
+<p>
+<strong>Set oRs = oConn.Execute("SELECT * From authors")</strong>
+
+
+</DIV>
+<p>
+<P>&nbsp;</P>
+<hr>
+<center>
+<span class="smallertext">© 2002. SQLCache.com</span></DIV>
+</center>
+</BODY>
+</HTML>

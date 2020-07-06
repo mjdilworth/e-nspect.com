@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="fm.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+		<title>xlMA_Correl</title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<!--bgcolor="#c5c99b"-->
+	<body>
+		<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+			<TR>
+				<TD bgColor="#c8001e"><img src="logo.jpg"></TD>
+				<TD bgColor="#c8001e"><FONT color="white">providing </FONT><b><span style="COLOR: #f0d260">Shipping Risk</span>
+						<span style="COLOR: #f0d260">Management&nbsp;</span></b><FONT color="white">Solutions</FONT></TD>
+			</TR>
+		</TABLE>
+		<DIV id="nstext" valign="top">
+		<H1 class="relnotes" valign="top">xlMA_Correl</H1>
+		</div>
+		<DIV class="mytext">This function calculates the correlation between two price series over a given time period using the standard Moving Average technique. Under this technique, all the observations in the data samples are equally weighted. The function is given two separate series of historical prices (arguments: priceSampleA and priceSampleB) and returns the correlation coefficient between the continuously-compounded returns of the two price series. The function maintains the time scaling of the raw data (i.e. for daily historical prices, it returns the daily correlation).</DIV>
+		<DIV class="syntax">
+			<table CLASS="buttonbartable" width="100%" border="1" cellpadding="1" cellspacing="1" ID="Table1">
+				<tr>
+					<td class="header">Argument</FONT></td>
+					<td class="header">Description</FONT></td>
+					<td class="header">Sample Data</td>
+					<td class="header">Switch</td>
+				</tr>
+				<tr>
+					<td>priceSampleA</td>
+					<td>First series of prices</td>
+					<td>see note below</td>
+					<td></td>
+				</tr>			
+				<tr>
+					<td>priceSampleB</td>
+					<td>Second series of prices</td>
+					<td>see note below</td>
+					<td></td>
+				</tr>			
+			</table>
+		</DIV>
+		<p>
+		<DIV class="syntax">
+		Note:	Each priceSample argument is passed on in the form of an Excel range consisting of one column that contains the series of prices for which we want to estimate the correlation with the other series. Both series must be of equal size (i.e. with equal number of observations in each sample).
+		</DIV>
+		</p>
+		<p>
+		<DIV class="syntax">
+		References 
+		<ul>
+			<li>Dowd, K. (2002), Measuring Market Risk, Wiley.</li>
+			
+		</ul>	
+		</DIV>
+		<center valign="top">
+			<hr>
+			<span class="smallertext">© 2005. FreightMetrics</span></center>
+		</DIV>
+	</body>
+</html>

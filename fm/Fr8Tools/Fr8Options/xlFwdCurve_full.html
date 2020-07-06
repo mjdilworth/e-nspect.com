@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="fm.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+		<title>xlfwdCurve_full</title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<!--bgcolor="#c5c99b"-->
+	<body>
+		<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+			<TR>
+				<TD bgColor="#c8001e"><img src="logo.jpg"></TD>
+				<TD bgColor="#c8001e"><FONT color="white">providing </FONT><b><span style="COLOR: #f0d260">Shipping Risk</span>
+						<span style="COLOR: #f0d260">Management&nbsp;</span></b><FONT color="white">Solutions</FONT></TD>
+			</TR>
+		</TABLE>
+		<DIV id="nstext" valign="top">
+		<H1 class="relnotes" valign="top">xlfwdCurve_full</H1>
+		</div>
+		<DIV class="mytext">This function generates the full forward curve for a certain underlying route/index from a given set of FFA prices. For further information on how to interpret and construct freight forward curves, please refer to the paper “Freight Forward Curves: Techniques and Applications”.</DIV>
+		<DIV class="syntax">
+			<table CLASS="buttonbartable" width="100%" border="1" cellpadding="1" cellspacing="1" ID="Table1">
+				<tr>
+					<td class="header">Argument</FONT></td>
+					<td class="header">Description</FONT></td>
+					<td class="header">Sample Data</td>
+					<td class="header">Switch</td>
+				</tr>
+				<tr>
+					<td>spotPrice</td>
+					<td>Spot price</td>
+					<td>30000</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>FFAprice</td>
+					<td>Set of FFA prices</td>
+					<td>see note below</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>freq</td>
+					<td>Frequency of interpolation (in days)</td>
+					<td>1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>curveType</td>
+					<td>Type of curve</td>
+					<td>1</td>
+					<td>1=Forward curve 2=Term structure</td>
+				</tr>
+				
+			</table>
+		</DIV>
+		<p>
+		<DIV class="syntax">
+		Note:	The FFAprices argument is passed on in the form of an Excel range consisting of 4 columns. The first column contains the name of the FFA contract, the second and the third column contain the starting and ending date, respectively, of the settlement period, and the fourth column contains the corresponding FFA price. No headings are required at the top row of the range.
+		</DIV>
+		<p>
+		<DIV class="syntax">
+		References 
+		<ul>
+			<li>FreightMetrics (2005), “Freight Forward Curves: Techniques and Applications”, www.freightmetrics.com.</li>
+			<li>Weber, N., and J. James, (2001), Interest Rate Modelling, Wiley.</li>
+			
+		</ul>	
+		</DIV>
+<center valign="top">
+			<hr>
+			<span class="smallertext">© 2005. FreightMetrics</span></center>
+		</DIV>
+	</body>
+</html>

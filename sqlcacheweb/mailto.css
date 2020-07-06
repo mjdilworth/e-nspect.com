@@ -1,0 +1,66 @@
+body /* This body tag requires the use of one of the sets of banner and/or text div ids */
+	{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background: #ffffff; 
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	width: 100%;
+	}
+div#nsbanner /* Creates Nonscrolling banner region */
+	{
+	position: relative;
+	left: 0px;
+	padding: 0px 0px 0px 0px;
+	}
+div#nstext /* Creates the scrolling text area for Nonscrolling region topic */
+	{
+	left: 0px;
+	margin-top: -20px;
+	padding: 0px 12px 0px 12px;
+	}
+div#bannerrow2 /* provides full-width color bottom row in running head (requires script) */
+	{
+	background-color: #99CCFF; 
+	}
+img
+	{
+	border: none; 
+	}
+
+
+/* STYLES FOR RUNNING HEADS */
+
+.buttonbartable, .bannerparthead /* General values for the Running Head tables */
+	{
+	position: relative;
+	left: 0px;
+	top: 0px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	width: 100%;
+	height: 20px; 
+	border-collapse: collapse; /* acommodates Table style  defs */
+	border-width: 0px;
+	}
+
+table.buttonbartable td, table.buttonbarshade td /* General Values for cells in the bottom row of running head */
+	{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	vertical-align: middle;
+	border-width: 0px 0px 1px 0px; /* Creates line when printing (invisible online) */
+	border-color: #99CCFF; /* MUST BE SAME COLOR AS div#bannerrow2 #cccc99; */
+	background: transparent; 
+	height: 20px; 
+	font-style: normal;
+	font-weight: bold;
+	}
+
+table.buttonbartable td.runninghead /* Values for right cell in the bottom row of running head */
+	{
+	padding: 0px 0px 0px 4px;
+	text-align: left;
+	}
+div.feedbackarea {display: none;}

@@ -1,0 +1,2 @@
+[Wed Jan 23 23:21:55 2002] [error] [client 213.5.2.14] Directory index forbidden by rule: /usr/local/psa/home/vhosts/SQLCache.com/web_users/mjd/
+[Wed Jan 23 23:22:04 2002] [error] [client 213.5.2.14] File does not exist: /usr/local/psa/home/vhosts/SQLCache.com/httpdocs/mjd

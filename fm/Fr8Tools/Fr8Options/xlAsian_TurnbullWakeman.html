@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>xlAsian_TurnbullWakeman</title>
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="fm.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="mailto.css">
+		<LINK REL="stylesheet" MEDIA="SCREEN" TYPE="text/css" HREF="coUA_Ex.css">
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<!--bgcolor="#c5c99b"-->
+	</head>
+	<body>
+		<TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0" bordercolor="black">
+			<TR>
+				<TD bgColor="#c8001e"><img src="logo.jpg"></TD>
+				<TD bgColor="#c8001e"><FONT color="white">providing </FONT><b><span style="COLOR: #f0d260">Shipping Risk</span>
+						<span style="COLOR: #f0d260">Management&nbsp;</span></b><FONT color="white">Solutions</FONT></TD>
+			</TR>
+		</TABLE>
+		<DIV id="nstext" valign="top">
+			<H1 class="relnotes" valign="top">xlAsian_TurnbullWakeman</H1>
+		</DIV>
+		<DIV class="mytext">This function calculates the fair value or risk statistics (delta, gamma, vega...) for Asian style options on freight using the Turnbull & Wakeman approximation model. This model is ultimately based on the generalised Black-Scholes model and is widely used as an analytic approximation for pricing geometric average Asian options. (For further evaluation of the various option pricing models offered by Fr8Tools, please refer to the document “Option Pricing Model Comparison”)</DIV>
+		<DIV class="syntax">
+			<table CLASS="buttonbartable" width="100%" border="1" cellpadding="1" cellspacing="1">
+				<tr>
+					<td class="header">Argument</FONT></td>
+					<td class="header">Description</FONT></td>
+					<td class="header">Sample Data</td>
+					<td class="header">Switch</td>
+				</tr>
+				<tr>
+					<td>
+						optType</td>
+					<td>Type of option (call/put)</td>
+					<td>1</td>
+					<td>1=Call, 2=Put</td>
+				</tr>
+				<tr>
+					<td>FFAprice</td>
+					<td>Price of the underlying FFA contract</td>
+					<td>20000</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>realAvg</td>
+					<td>Realised average price since the beginning of the average period</td>
+					<td>0.00</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>strike</td>
+					<td>Strike price</td>
+					<td>22000</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>timeMat1</td>
+					<td>Original time to maturity</td>
+					<td>0.50</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>timeMat2</td>
+					<td>Remaining time to maturity</td>
+					<td>0.25</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>timeBegAvg</td>
+					<td>Time to the beginning of the average period</td>
+					<td>0.00</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>intRate</td>
+					<td>Risk-free interest rate</td>
+					<td>4% or 0.04</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>costCarry</td>
+					<td>Cost of carry</td>
+					<td>2% or 0.02</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>vol</td>
+					<td>Volatility (annualised)</td>
+					<td>40% or 0.40</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>reqResult</td>
+					<td>Required result</td>
+					<td>1</td>
+					<td>1=Price, 2=Delta, 3=Gamma, 4=Vega, 5=Theta, 6=Rho</td>
+				</tr>
+			</table>
+		</DIV>
+		<p></p>
+		<DIV class="syntax">
+			References
+			<ul>
+				<li>
+					Turnbull, S.M., and L.M. Wakeman (1991), “A Quick Algorithm for Pricing 
+					European Average Options”, Journal of Financial and Quantitative Analysis, 26, 
+					377-389.</li>
+			</ul>
+		</DIV>
+		<center valign="top">
+			<hr>
+			<span class="smallertext">© 2005. FreightMetrics</span></center>
+		<DIV></DIV>
+	</body>
+</html>
